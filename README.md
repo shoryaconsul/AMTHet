@@ -1,5 +1,5 @@
 # AMTHet
-AMTHet - Inferring Intra-tumor hetoerogeneity
+## AMTHet - Inferring Intra-tumor hetoerogeneity
 
 **Subdirectories:**
 * mixclone: Contains files to run MixClone on our data
