@@ -1,5 +1,5 @@
 # AMTHet
-## AMTHet - Inferring Intra-tumor hetoerogeneity
+## Inferring intra-tumor hetoerogeneity using convex optimization and branch-and-bound search
 
 **Subdirectories:**
 * mixclone: Contains files to run MixClone on our data
