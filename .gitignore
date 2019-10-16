@@ -2,5 +2,5 @@ cIBP_files
 Synth1_Results
 21_Breast_Cancers_Table.xlsx
 alt_min_fn.m
-alt_min_synth_*.m
+alt_min_synth*.m
 ThetA_06_bootstrap
