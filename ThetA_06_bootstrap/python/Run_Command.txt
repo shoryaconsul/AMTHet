@@ -1,0 +1,19 @@
+Instructions to run THetA:
+
+1) Open Anaconda Prompt.
+2) Navigate to working directory.
+3) Type "activate py27"
+4) Run
+5) General command structure
+python RunTHetA.py (interval file) -n (no of pop) -k (max copy no) -t (Normal copy no) -d (output dir) --BOUND_HEURISTIC -0.5 --NO_INTERVAL_SELECTION
+
+
+Notes:
+1) Automatic interval selection selects the 100 longest intervals by default for n = 2, and 20 longest intervals for n = 3.
+2) The minimum lenghts of intervals for n=2 and n=3 differ.
+3) 
+
+Issues:
+1) Create output directory first.
+
+
