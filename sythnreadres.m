@@ -1,6 +1,6 @@
 %% Reading THetA and MixClone results and comparing vs AMTHet results for synthetic data
 num_rep = 10;       % Experiment repeated num_rep times to evaluate performance
-num_iter = 1e5;     % Max no of iterations for Alt_Min
+num_iter = 1e5;     % Max no of iterations for AMTHet
 m = 12;     % No of intervals
 n = 4;      % No of subclones
 K = 4;      % Maximum number of copy number aberrations (CNAs)
@@ -14,8 +14,8 @@ dir_ip = 'ThetA_06_bootstrap\python\interval_files\scnv\';        % Relative pat
 dir_op = 'ThetA_06_bootstrap\python\output\scnv\';                % Relative path to output folder
 pre = strcat('interval_count_n',int2str(n));  %input prefix
 
-mu_err = zeros(3,num_rep);  % Purity error
-mu_diff = zeros(3,num_rep); % L2 norm of diff in tumor fractions
+mu_err = zeros(3,num_rep);  % L2 norm of diff in tumor fractions
+mu_diff = zeros(3,num_rep); % Purity error
 L_err = zeros(3,num_rep);   % L2 norm of difference in CNA matrix
 L_diff = zeros(3,num_rep);  % L0 norm of difference in CNA matrix
 

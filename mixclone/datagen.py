@@ -103,22 +103,22 @@ def data_convert(indir, fnum, n, k):
             baf_ref = np.array([mu_gt[0]*seg_baf])
             baf_nref = np.array([mu_gt[0]*(1-seg_baf)])
             for j in range(nt):
-                cnv_j = cnv_seg[j]
+                cnv_j = cnv_seg[j] # Copy number for subclone
                 if cnv_j == 0:
                     pass
                 elif cnv_j == 1:
-                    ref_flip = random>0.5
+                    ref_flip = random>0.5 # Pick ref or nonref allele for CNV = 1
                     baf_ref = baf_ref+ref_flip*mu_gt[j+1]*seg_baf
                     baf_nref = baf_nref+(1-ref_flip)*mu_gt[j+1]*(1-seg_baf)
                 elif cnv_j==2:
                     baf_ref = baf_ref+mu_gt[j+1]*seg_baf
                     baf_nref = baf_nref+mu_gt[j+1]*(1-seg_baf)
                 else:
-                    ref_num = randint(k)
+                    ref_num = randint(cnv_j) # Pick number of copies of ref allele
                     baf_ref = baf_ref+mu_gt[j+1]*ref_num*seg_baf
-                    baf_nref = baf_nref+mu_gt[j+1]*(k-ref_num)*(1-seg_baf)
+                    baf_nref = baf_nref+mu_gt[j+1]*(cnv_j-ref_num)*(1-seg_baf)
                 
-            seg_baf = baf_ref/(baf_ref+baf_nref)
+            seg_baf = baf_ref/(baf_ref+baf_nref) # Normalizing BAF
             tumor_ref = tread*baf_ref
             tumor_nref = tread*baf_nref
                     
